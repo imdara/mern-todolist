@@ -19,9 +19,7 @@ app.use(cors());
 app.use("/api/auth", usersRoute);
 app.use("/api/todos", todosRoute);
 
-app.use(express.static("build"));
-
-app.get("/", (req, res) => res.sendFile("./public/index.html"));
+app.get("/", (req, res) => res.send({statusCode: 200, message:"Server is up"}));
 
 const PORT = process.env.PORT || 4000;
 
